@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxim's Personal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .lang-switch {
+            text-align: right;
+            margin: 20px;
+        }
+        .lang-switch a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Maxim's Personal Page</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#science">Science</a>
+        <a href="#poetry">Poetry</a>
+        <a href="#spiritual">Spiritual</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang-switch">
+        <a href="#" onclick="switchLanguage('en')">EN</a> | 
+        <a href="#" onclick="switchLanguage('ru')">RU</a>
+    </div>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p lang="en">A social psychologist by training. I completed my PhD at the University of Jerusalem. From 2013 to 2017, I did a postdoc at the University of Maryland, in the laboratory of Professor Arie Kruglansky, where I studied arrogance, the compensatory relationship between agency and attitudes toward others, the processes of goal setting and emotion regulation.
+            Since 2017 I have been working at Kiryat Ono College in the Faculty of Business and Administration. I do research in the field of decision making and motivation. I study how people choose advisors and use advice. I also do research in the field of firm behavior.</p>
+            <p lang="ru" style="display:none;">Социальный психолог по образованию. Я защитил докторскую диссертацию в Иерусалимском университете. С 2013 по 2017 год я проходил постдокторантуру в Мэрилендском университете в лаборатории профессора Ари Круглянски, где изучал высокомерие, компенсаторные отношения между агентством и отношением к другим, процессы постановки целей и регулирования эмоций.
+            С 2017 года я работаю в колледже Кирьят Оно на факультете бизнеса и управления. Я занимаюсь исследованиями в области принятия решений и мотивации. Я изучаю, как люди выбирают консультантов и используют советы. Также я занимаюсь исследованиями в области поведения фирм.</p>
+        </section>
+        <section id="science">
+            <h2>Science</h2>
+            <p lang="en">[Your science-related content goes here]</p>
+            <p lang="ru" style="display:none;">[Ваше содержание, связанное с наукой, здесь]</p>
+        </section>
+        <section id="poetry">
+            <h2>Poetry</h2>
+            <p lang="en">[Your poetry-related content goes here]</p>
+            <p lang="ru" style="display:none;">[Ваше содержание, связанное с поэзией, здесь]</p>
+        </section>
+        <section id="spiritual">
+            <h2>Spiritual</h2>
+            <p lang="en">[Your spiritual-related content goes here]</p>
+            <p lang="ru" style="display:none;">[Ваше содержание, связанное с духовностью, здесь]</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p lang="en">Email: <a href="mailto:maxim.m@ono.ac.il">maxim.m@ono.ac.il</a></p>
+            <p lang="ru" style="display:none;">Эл. почта: <a href="mailto:maxim.m@ono.ac.il">maxim.m@ono.ac.il</a></p>
+        </section>
+    </div>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[lang]').forEach(function(element) {
+                element.style.display = (element.getAttribute('lang') === lang) ? 'block' : 'none';
+            });
+        }
+        switchLanguage('en'); // Default language
+    </script>
+</body>
+</html>
