@@ -45,8 +45,8 @@ nav a {
 }
 .poem-title {
   cursor: pointer;
-  color: #212F3C;
-  text-decoration: underline;
+  color: #333;
+  //text-decoration: underline;
   font-size: 16px;
 }
 .poem-content {
@@ -65,7 +65,7 @@ li {
 }
 
 li a {
-  color: #3577fe !important;
+  color: #3577fe !important;
 }
     </style>
 </head>
@@ -85,10 +85,10 @@ li a {
         <section id="about">
             <h2>About Me</h2>
             <p>I am a social psychologist. I completed my PhD at the Hebrew University of Jerusalem. From 2013 to 2017, I did a postdoc at the University of Maryland, in the laboratory of Professor Arie Kruglanski, where I studied arrogance, the compensatory relationships between personal agency and attitudes towards others, and the processes of goal setting and emotion regulation.
-            Since 2017 I have been working at Ono Academic College in the Faculty of Business and Administration. I do research in the field of decision making and motivation. In particular, I study how people choose advisors and utilize advice. I also do research in the field of firm behavior.</p>
+            Since 2017 I have been working at Ono Academic College in the Faculty of Business and Administration. I do research in the field of decision making and motivation. I study how people choose advisors and utilize advice. I also do research in the field of firm behavior.</p>
         </section>
         <section id="science">
-            <h2>Science</h2>
+            <h2>Science / Наука</h2>
             <ul>
                 <li>
                     <a href="https://drive.google.com/file/d/1bjvQBORP764kUV6ECvArHJXFB1TFC-Jc/view?usp=sharing" target="_blank">Milyavsky, M., & Gvili, Y. (2024). Advice taking vs. combining opinions: Framing social information as advice increases source’s perceived helping intentions, trust, and influence. Organizational Behavior and Human Decision Processes, 183, 104328.</a>
@@ -141,7 +141,75 @@ li a {
             </ul>
         </section>
         <section id="poetry">
-            <h2>Poetry</h2>
+            <h2>Poetry / Поэзия</h2>
+	    <h3>Poems / Стихи</h3>
+            <!-- Add poems for Poems here -->
+	    <h3 class="poem-title" onclick="togglePoem('poem10')">На смерть Навального</h3>
+            <div id="poem10" class="poem-content">
+                Вот солнце зашло за церковь <br>
+                Негаданно-и-нежданно… <br>
+                На Кампо де Фиори, в центре, <br>
+                Привязанный ждёт Джордано. <br><br>
+                Готовы сухие ветки, <br>
+                Уже собрались зеваки, <br>
+                О чём-то смеются девки, <br>
+                Палач поджигает факел. <br><br>
+                — Сейчас он у них попляшет… <br>
+                Огонь не таких очистил… <br>
+                — Откажется он - а как же - <br>
+                От всех своих ложных истин. <br><br>
+                — Учил своей странной вере - <br>
+                Вкруг солнца, мол, всё верти́тся. <br>
+                — О Боже, какая ересь! <br>
+                Ведь вон же оно - садится. <br><br>
+                И вправду - стемнело рано. <br>
+                Уж звёзды по небосводу… <br>
+                Упрямый стоит Джордано, <br>
+                Глядя на огонь как в воду. <br><br>
+                — Вселенная бесконечна —  <br>
+                Кричит он сквозь треск поленьев… <br>
+                Джордано уходит в вечность - <br>
+                Навстречу своей вселенной. <br> <br>
+                -------------------------- <br> <br>
+                Четыреста лет минуло. <br>
+                Устало глядит дневальный <br>
+                Как лыбится вновь на дуло <br>
+                Зэка Алексей Навальный. <br><br>
+                Чего же ему неймётся? <br>
+                Что, карцера было мало?! <br>
+                Посмотрим как посмеётся <br>
+                Он в лютых ветрах Ямала. <br><br>
+                Сейчас он у нас попляшет, <br>
+                Мороз не таких очистил, <br>
+                Откажется он - а как же - <br>
+	        	От всех своих ложных истин. <br><br>
+	        	Кричал, он что мы свободны, <br>
+		        На лживых своих каналах, <br>
+		        Чего ж он теперь голодный <br>
+		        И тощий сидит на нарах? <br><br>
+		        Сгущается тьма в Ямале - <br>
+		        Лишь звёзды на небосводе. <br>
+		        Упрямо твердит Навальный <br>
+	        	О выдуманной свободе… <br><br>
+		        Он так же им улыбнулся <br>
+		        Как и тогда на пьяцце… <br>
+		        — Зачем он вообще вернулся? <br>
+		        Ведь мог же не возвращаться… <br><br>
+                2024
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem9')">Ручной дракон</h3>
+            <div id="poem9" class="poem-content">
+                А здесь у нас живёт ручной дракон <br>
+		        Совсем не страшный и ужасно милый. <br>
+		        Его мы сами поим молоком <br>
+		        И с каждым днём он набирает силу. <br><br>
+		        Вот он уже - глядите - полетел, <br>
+		        Расправил крылья и огнём дыхнул он. <br>
+		        А вот - хвостом забавно повертел, <br>
+		        А вот - взглянул - как холодом подуло... <br><br>
+                2023
+            </div>
+            
             <h3 class="poem-title" onclick="togglePoem('poem8')">Покой среди покоя…</h3>
             <div id="poem8" class="poem-content">
                 Покой среди покоя - <br>
@@ -278,7 +346,8 @@ li a {
                 И старик спокойно засыпал.<br><br>
                 2000?
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem1')">ХаТиква / התקווה (мой перевод Нафтали Герц Имбера)</h3>
+	    <h3>Translations / Переводы </h3>
+            <h3 class="poem-title" onclick="togglePoem('poem1')">ХаТиква / התקווה (Нафтали Герц Имбер)</h3>
             <div id="poem1" class="poem-content">
                 Покуда в сердце глубо́ко<br>
                 Душа не знает покоя,<br>
@@ -289,7 +358,7 @@ li a {
                 Жить свободно, как прежде, <br>
                 В стране Сиона, Иерусалима.
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem2')">И снова колосится рожь / והחיטה צומחת שוב (мой перевод Дорит Цамерет)</h3>
+            <h3 class="poem-title" onclick="togglePoem('poem2')">И снова колосится рожь / והחיטה צומחת שוב (Дорит Цамерет)</h3>
             <div id="poem2" class="poem-content">
                 Раскинулись поля от края и до края,<br>
                 В цветении олив, дубов и миндаля,<br>
@@ -312,7 +381,7 @@ li a {
                 А я всё тщусь понять, увы, неодолимо –<br>
                 Зачем опять в полях заколосилась рожь…
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem3')">Остановка в зимнем лесу / Stopping by Woods on a Snowy Evening (мой перевод Роберта Фроста)</h3>
+            <h3 class="poem-title" onclick="togglePoem('poem3')">Остановка в зимнем лесу / Stopping by Woods on a Snowy Evening (Роберт Фрост)</h3>
             <div id="poem3" class="poem-content">
                 Давно я знаю этот лес.<br>
                 Не в первый раз стою я здесь.<br>
@@ -331,7 +400,7 @@ li a {
                 И мой ночлег ещё далёк<br>
                 И мой ночлег далёк…
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem4')">Нехоженная тропа / The Road Not Taken (мой перевод Роберта Фроста)</h3>
+            <h3 class="poem-title" onclick="togglePoem('poem4')">Нехоженная тропа / The Road Not Taken (Роберт Фрост)</h3>
             <div id="poem4" class="poem-content">
                 Я стоял у развилки дорог в лесу.<br>
                 Жаль, я не мог пойти по обеим --<br>
@@ -354,7 +423,7 @@ li a {
                 Нехоженая привела сюда.<br>
                 И это, наверно, не так уж плохо."
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem5')">Когда / If (мой перевод Редьярда Киплинга)</h3>
+            <h3 class="poem-title" onclick="togglePoem('poem5')">Когда / If (Редьярд Киплинг)</h3>
             <div id="poem5" class="poem-content">
                 Когда ты сможешь сохранять рассудок<br>
                 Средь безрассудства общей суеты<br>
@@ -389,7 +458,7 @@ li a {
                 Мир будет твой! Тогда лишь! Без сомненья!<br>
                 Тогда, мой сын, тогда ты - Человек!
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem6')">Вересковый эль / Heather Ale (мой перевод Роберта Льюиса Стивенсона)</h3>
+            <h3 class="poem-title" onclick="togglePoem('poem6')">Вересковый эль / Heather Ale (Роберт Льюис Стивенсон)</h3>
             <div id="poem6" class="poem-content">
                 Шумит упрямый вереск<br>
                 В моём родном краю,<br>
@@ -501,7 +570,7 @@ li a {
                 Старинного эля секреты<br>
                 Со мной превратятся в дым.
             </div>
-            <h3 class="poem-title" onclick="togglePoem('poem7')">Человек в чёрном / Man in black (мой перевод Джонни Кэша) </h3>
+            <h3 class="poem-title" onclick="togglePoem('poem7')">Человек в чёрном / Man in black (Джонни Кэш) </h3>
             <div id="poem7" class="poem-content">
                 Хочешь знать зачем я чёрное ношу?<br>
                 Почему в одеждах ярких не хожу?<br>
@@ -531,6 +600,258 @@ li a {
                 И твердить, что в мире правит красота,<br>
                 Но пока просвета не увидим мы,<br>
                 На себе я выношу кусочки тьмы.
+            </div>
+            <h3>Шутки в сторону / Not serious</h3>
+            <!-- Add poems for Not serious here -->
+            <h3 class="poem-title" onclick="togglePoem('poem15')">Кузнец решил: Открою сайт...</h3>
+            <div id="poem15" class="poem-content">
+	            Кузнец решил: Открою сайт<br>
+		        Не всё ж мне молотком<br>
+		        И буду всякое писать<br>
+		        Об этом и о том.<br><br>
+		        Я слышал -- после сорока --<br>
+		        От старших кузнецов,<br>
+		        Слабеет правая рука,<br>
+		        Усталость налицо...<br><br>
+		        Открою сайт с онлайн чат -<br>
+		        Не буду уставать,<br>
+		        А буду просто обучать<br>
+		        Как правильно ковать.<br><br>
+		        Открою сайт, хороший сайт --<br>
+		        Не вечно ж молотком.<br>
+		        Отличный сайт, кузнечный сайт<br>
+		        Кузнечик точка ком.<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem23')">Полозковой</h3>
+            <div id="poem23" class="poem-content">
+                Поэзия это эксгибиционизм -<br>
+                не более.<br>
+                Экспозиция, правда, не низа,<br>
+                А боли.              <br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem24')">Ум украдкой посетив</h3>
+            <div id="poem24" class="poem-content">
+                Мигом скрылся позитив.<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem25')">Утро мудреннее ночи</h3>
+            <div id="poem25" class="poem-content">
+                Подучила ночь его...<br>
+                У сыночка спал носочек,<br>
+                А у папы спал сыночек. <br>
+                Непонятно, непонятно, непонятно ничего!<br><br>
+                8.06.17<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem26')">Нарушив дирижера сон</h3>
+            <div id="poem26" class="poem-content">
+                Обрывком музыкальной фразы<br>
+                Опять вступили унитазы<br>
+                Не в унисон.<br><br>
+                14.10.17<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem27')">Евреи, изгоняясь гоями</h3>
+            <div id="poem27" class="poem-content">
+                Буквально делались изгоями.<br><br>
+                27.10.17<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem28')">У дачников не бывает</h3>
+            <div id="poem28" class="poem-content">
+                неудачников.<br><br>
+                27.10.17<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem29')">В технологическом саду</h3>
+            <div id="poem29" class="poem-content">
+                Я жизнь растения веду. <br>
+                Расту себе на грядке<br>
+                И с виду всё в порядке.<br><br>
+                17.12.17<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem30')">На тебе сошелся клином белый свет</h3>
+            <div id="poem30" class="poem-content">
+                Проворчал наводчик лазера в ответ.<br><br>
+                18.01.18<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem31')">Словам и фразам нету веры --</h3>
+            <div id="poem31" class="poem-content">
+                Везде подлог, повсюду ложь!<br>
+                В берлоге не отыщешь Берлов,<br>
+                В перловке перлов не найдёшь!<br><br>
+                26.01.18<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem32')">Франциско мыл посуду стоя.</h3>
+            <div id="poem32" class="poem-content">
+                Абрам следил, потом сказал:<br>
+                "Смотри, жена, какого гойя<br>
+                Я нам на шабес заказал."<br><br>
+                08.03.18<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem33')">О Ковиде</h3>
+            <div id="poem33" class="poem-content">
+                Когда в товарищах согласья нет,<br>
+                Нас некогда предупреждал поэт,<br>
+                То дело не пойдёт на лад, а будут только нервы.<br>
+                Однажды, доллар, фунт и евро<br>
+                Вести на смертный бой с ковидом ВОЗ взялись<br>
+                И вместе трое за него впряглись;<br>
+                Из кожи лезут вон, а ВОЗу всё нет ходу!<br>
+                Задумка их друзьям казалась хороша:<br>
+                Да доллар бьётся за США<br>
+                Фунт за Британию, а евро - за погоду.<br>
+                Кто виноват из них, кто прав - судить не нам;<br>
+                Да только ВОЗ и ныне там.<br><br>
+                12.10.20<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem34')">О наболевшем</h3>
+            <div id="poem34" class="poem-content">
+                Почему зимой хамсин?!<br>
+                Почему сопливый сын?!<br>
+                Почему жена с мигренью?!<br>
+                Что мне делать с этой хренью?<br><br>
+                06.01.21<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem35')">Жил человек у Бога...</h3>
+            <div id="poem35" class="poem-content">
+                А жил довольно убого.<br><br>
+                02.09.21<br><br>
+            </div>
+ 	        <h3>Поздравления / Congratulations</h3>
+            <!-- Add poems for Congratulations here --><h3>
+            <h3 class="poem-title" onclick="togglePoem('poem19')">Юре Аронову (Свояку)</h3>
+            <div id="poem19" class="poem-content">
+                У матросов есть маяк -<br>
+                Путь им освещает.<br>
+                У меня же есть свояк -<br>
+                Тоже просвещает.<br><br>
+                Если нужен вам совет -<br>
+                Обращайтесь к Юре.<br>
+                Он де-факто даст ответ,<br>
+                А потом де-юре.<br><br>
+                Изучает он гмару,<br>
+                Спец по домострою,<br>
+                Знает где купить диру*<br>
+                (Но пока не стоит).<br><br>
+                Сочиняет "пирожки",<br>
+                Даже мастер стрижки!<br>
+                Так что ждите, корешки -<br>
+                Скоро выйдут книжки!<br><br>
+                2024<br><br>
+                ----------------------------<br><br>
+                *На иврите - квартира.
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem16')">Владимиру Хазановскому (Тестю)</h3>
+            <div id="poem16" class="poem-content">
+                Из какого теста <br>
+                Сделают вам тестя -<br>
+                Это неизвестно <br>
+                И не угадать.<br>
+                Если из ржаного -<br>
+                Будет жизнь сурова.<br>
+                Если дрожжевое -<br>
+                Будешь весь дрожать.<br><br>
+                Если тесть слоеный -<br>
+                Будет жизнь солёной.<br>
+                Если он песочный -<br>
+                Пропесочит вас.<br>
+                Если тесть бесквитный* -<br>
+                Будет жизнь обидной - <br>
+                И не поквитаться<br>
+                Ни единый раз.<br><br>
+                Мне же выпал - сдобный<br>
+                (Даже неудобно)<br>
+                Ведь другим на тестей<br>
+                Так не повезло.<br>
+                Не корит, не гонит,<br>
+                Не ворчит, не стонет<br>
+                Лишь благоухает<br>
+                Нежно и тепло.<br><br>
+                -----------------------------
+                *Знаю, что "бИсквитный"<br><br>
+                2023
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem17')">Стасику Рираховскому</h3>
+            <div id="poem17" class="poem-content">
+                Что пятьдесят для человека?<br>
+                У Блока был такой ответ -<br>
+                Прожить повторно четверть века.<br>
+                Всё вроде так... исхода нет?<br><br>
+                Но это как-то истерично<br>
+                И выход ищет голова - <br>
+                А выход - в шестнадцатеричной,<br>
+                Где пятьдесят - лишь тридцать два!<br><br>
+                2022
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem18')">Людмиле Хазановской (Тёще)</h3>
+            <div id="poem18" class="poem-content">
+                На свете бывают различные тёщи <br>
+                Есть тёщи похлеще, есть тёщи потоще, <br>
+                Но тёща в которой соединены <br>
+                Юнг, астрология, щи и блины…<br><br>
+                Такая наверно одна есть на тыщи…<br>
+                И тот, кто себе эту тёщу отыщет <br>
+                И будет затащен на щи и блины<br>
+                В канун нарождения чёрной Луны.<br><br>
+                2021
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem20')">Бабке на 82-летие</h3>
+            <div id="poem20" class="poem-content">
+                Шлю бандероль тебе из-за Атлантики<br>
+                Не для героики, не для романтики,<br>
+                Не из желания привлечь внимание -<br>
+                По факту временного проживания... <br><br>
+                Ко дню рождения, как полагается, <br>
+                Презент - десерт к столу - тут прилагается<br>
+                Прости осела коль там пыль дорожная<br>
+                Волна Атлантики неосторожная...<br><br>
+                2014<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem21')">Максу Эпельбауму на 36-летие</h3>
+            <div id="poem21" class="poem-content">
+                Ты видал полотна Тициана,<br>
+                Рубенса сюжеты обходил,<br>
+                Слышал звук поющего фотнана,<br>
+                Посетил творенья Гауди.<br><br>
+                Был на мысе на краю Европы,<br>
+                Видел чаек, видел обезьян,<br>
+                Пережил Севилью и Кордобу,<br>
+                Был на пьяццах, хоть и не был пьян.<br><br>
+                Что же подарить тебе братишка?<br>
+                Испытал ты всяческую блажь.<br>
+                Впечатлений было даже слишком...<br>
+                Вот из них составленный коллаж.<br><br>
+                2013<br><br>
+            </div>
+            <h3 class="poem-title" onclick="togglePoem('poem22')">Роме Хозину на 25-летие</h3>
+            <div id="poem22" class="poem-content">
+                Ты дошёл до перевала.<br>
+                Двадцать пять годочков топал.<br>
+                И тебя ещё немало<br>
+                Ожидает горных тропок.<br><br>                
+                Сто подъёмов и сто спусков,<br>
+                Сто мозолей, сто ушибов -<br>
+                На дороге этой узкой<br>
+                От подножия к вершине.<br><br>
+                И с упрямством небывалым,<br>
+                С юморком немного грубым<br>
+                Ты пройдёшь по перевалам<br>
+                Как обычно, стиснув зубы.<br><br>                
+                Не тебе сидеть за партой!<br>
+                Не тебе торчать у компа!<br>
+                Мы тебе подарим карту!<br>
+                Мы тебе подарим компас!<br><br>                
+                И такую вот картину<br>
+                Вижу я при слове «Рома»:<br>
+                Ты идёшь по серпантину...<br>
+                На спине рюкзак огромный...<br><br>                
+                И на лбу твоём бандана!<br>
+                И в глазах твоих свобода!<br>
+                А не тусклый свет экрана<br>
+                Виртуального урода...<br><br>
+                2002<br><br>
+             </div>
+            <h3>Для детей / For kids  </h3>
+            <!-- Add poems for For kids here -->
+            <h3 class="poem-title" onclick="togglePoem('poem36')"><a href="https://docs.google.com/presentation/d/1npd8BKjPjFVSJPdIbX1qyp46iEvGTqKI/present" target="_blank">Черепашки Ниндзя в Изе.</h3>
+            <div id="poem36" class="poem-content">
+                <br><br>
             </div>
         </section>
         <section id="spiritual">
