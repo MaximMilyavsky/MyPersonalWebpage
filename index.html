@@ -69,10 +69,10 @@ li a {
 }
     </style>
 <script>
-    function downloadCV(url) {
+    function downloadCV(url, filename) {
         const a = document.createElement('a');
         a.href = url;
-        a.download = '';
+        a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -100,7 +100,7 @@ li a {
         </section>
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <p>You can download my CV <a href="#" onclick="downloadCV('https://github.com/MaximMilyavsky/MyPersonalWebpage/blob/main/Curriculum%20Vitae%20Maxim%20Milyavsky_2024_0725.pdf')">here</a>.</p>
+            <p>You can download my CV <a href="#" onclick="downloadCV('https://github.com/MaximMilyavsky/MyPersonalWebpage/blob/main/Curriculum%20Vitae%20Maxim%20Milyavsky_2024_0725.pdf', 'Curriculum_Vitae_Maxim_Milyavsky.pdf')">here</a>.</p>
             <!-- Additional CV content can be added here -->
         </section>        
         <section id="science">
