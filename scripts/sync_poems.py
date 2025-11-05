@@ -29,14 +29,16 @@ CATEGORY_TITLES = [
 ]
 
 CATEGORY_LABELS = [c[0] for c in CATEGORY_TITLES]
-CATEGORY_KEYWORDS = set([kw for _, d in CATEGORY_TITLES for kw in d.values()] + CATEGORY_LABELS)
 
 def is_year_line(s: str) -> bool:
     s = s.strip()
     return bool(re.fullmatch(r"(19|20)\d{2}", s))
 
 def clean_text(s: str) -> str:
-    return re.sub(r"\s+\n", "\n", s.strip())
+    """Collapse 3+ newlines, but preserve single/double newlines (stanzas)."""
+    s = s.rstrip()
+    s = re.sub(r"\n{3,}", "\n\n", s)
+    return s
 
 def fetch_html(url: str) -> str:
     r = requests.get(url, timeout=30)
@@ -44,21 +46,27 @@ def fetch_html(url: str) -> str:
     return r.text
 
 def extract_lines_from_html(html: str):
+    """Extract lines while preserving line breaks within paragraphs."""
     soup = BeautifulSoup(html, "html.parser")
-    # Google Docs "publish to web" uses <p>, <h1>-<h3> etc.
-    blocks = soup.find_all(["h1","h2","h3","p","li","div"])
+    blocks = soup.find_all(["h1", "h2", "h3", "p", "li", "div"])
     lines = []
     for b in blocks:
-        t = b.get_text(separator=" ", strip=True)
-        if t:
-            lines.append(t)
+        # preserve <br> and soft breaks
+        t = b.get_text(separator="\n", strip=True)
+        if not t:
+            continue
+        # split into physical lines
+        for line in t.split("\n"):
+            line = line.strip()
+            if line:
+                lines.append(line)
+    # remove Google header noise if present
+    lines = [l for l in lines if not l.lower().startswith("published using google docs")]
     return lines
 
 def looks_like_category(line: str) -> str:
-    # If a line exactly matches or starts with any known category string/keyword, return canonical category label
     t = line.strip()
     for label, langs in CATEGORY_TITLES:
-        # exact match or contains both sides around slash
         if t == label or any(k.lower() in t.lower() for k in langs.values()):
             return label
     return ""
@@ -66,11 +74,9 @@ def looks_like_category(line: str) -> str:
 def parse_poems(lines):
     """
     Heuristic parser:
-      - We walk through lines, track current_category.
-      - A new poem begins when we see a line that's not a category and not a year and not a separator,
-        and we are not currently in an active poem (i.e., expecting a title).
-      - We then collect body lines until we hit a year line, which we store as 'year' (string).
-      - Next non-empty line becomes a new title, etc.
+      - Track current_category
+      - A poem starts when we see a non-category/non-year line and no current_title
+      - Collect body lines until a year line appears, which closes the poem
     """
     current_category = None
     current_title = None
@@ -101,29 +107,24 @@ def parse_poems(lines):
 
         cat = looks_like_category(line)
         if cat:
-            # close any open poem
             flush_poem()
             current_category = cat
             continue
 
         if is_year_line(line):
             current_year = line
-            # Close poem upon year; the next non-empty non-year line becomes next title
             flush_poem()
             continue
 
-        # if no title yet, this is likely a title
         if current_title is None:
-            # Ignore separators like dashes
+            # ignore pure separator lines
             if set(line) <= set("-—–_•* "):
                 continue
             current_title = line
             continue
 
-        # Otherwise it's part of the body
         current_body.append(line)
 
-    # flush trailing poem
     flush_poem()
     return poems
 
@@ -134,22 +135,20 @@ def main():
 
     # Sort poems within each category by year (desc) then title
     def sort_key(p):
-        y = int(p.get("year", "0"))
+        try:
+            y = int(p.get("year", "0"))
+        except ValueError:
+            y = 0
         return (-y, p["title"].lower())
 
-    out_by_cat = {}
-    for label, _ in CATEGORY_TITLES:
-        out_by_cat[label] = []
-
+    out_by_cat = {label: [] for label, _ in CATEGORY_TITLES}
     for p in poems:
-        if p["category"] not in out_by_cat:
-            out_by_cat[p["category"]] = []
-        out_by_cat[p["category"]].append(p)
+        out_by_cat.setdefault(p["category"], []).append(p)
 
     for k in out_by_cat:
         out_by_cat[k].sort(key=sort_key)
 
-    # Flatten to a single list, keeping category tag in each poem
+    # Flatten
     flattened = [p for cat in CATEGORY_LABELS for p in out_by_cat.get(cat, [])]
 
     out_path = os.path.join(os.getcwd(), "poems.json")
